@@ -1,0 +1,129 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_FrameLayout.cshtml";
+    ViewBag.Title = "登录 - ";
+}
+@section styles{
+    <style type="text/css">
+        .loginboxblock {
+            height: 100%;
+            background-color: #0360a5;
+        }
+
+        .loginboxblock .block-body {
+            vertical-align: middle;
+        }
+
+            .loginboxblock .loginbox-body {
+                min-width: 500px;
+                width: 30%;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #1d5b8b;
+                border-width: 3px;
+                border-style: solid;
+                border-radius: 10px;
+                border-color: cornflowerblue;
+                box-shadow: 0px 0px 8px #ffffff;
+                -webkit-box-reflect: below;
+                box-reflect: above;
+                color: #ffffff;
+            }
+                .loginboxblock .loginbox-body .titlebox {
+                    margin-bottom:30px;
+                    text-align:center;
+                }
+            .loginboxblock .loginbox form .grid {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+                .loginboxblock .loginbox form .grid label {
+                    display: block;
+                    padding-right: 8px;
+                    text-align: right;
+                    vertical-align: middle;
+                }
+
+                .loginboxblock .loginbox form .grid input:not([type=checkbox]) {
+                    width: 100%;
+                    height: 1.8em;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+
+                .loginboxblock .loginbox form .grid:first-child {
+                    padding-top: 10px;
+                    padding-bottom: 5px;
+                }
+
+                .loginboxblock .loginbox form .grid:last-child {
+                    padding-top: 5px;
+                    padding-bottom: 10px;
+                }
+
+                .loginboxblock .loginbox form .grid:only-child {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+    </style>
+}
+<div class="block loginboxblock">
+    <div class="block-body">
+        <div class="loginbox-body">
+            <div class="titlebox">
+                <div style="font-size:2em;">企业信息管理系统</div>
+                <div>output directly to the response stream</div>
+            </div>
+            <div class="table loginbox">
+                <div class="col-lg-5" style="border-right:1px solid #ffffff"></div>
+                <div class="col-lg-7">
+                    <form id="ff" class="easyui-form" method="post" data-options="novalidate:true">
+                        <div class="grid">
+                            <div class="col-lg-4"><label>用户名：</label></div>
+                            <div class="col-lg-7"><input Name="LoginName" type="text" class="easyui-textbox" data-options="required:true'"></div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="grid">
+                            <div class="col-lg-4"><label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label></div>
+                            <div class="col-lg-7"><input Name="Password" type="text" class="easyui-textbox" data-options="required:true'"></div>
+                            <div class="col-lg-1"></div>
+                        </div>
+                        <div class="grid">
+                            <div class="col-lg-4"><label>验证码：</label></div>
+                            <div class="col-lg-4"><input Name="ValidCode" type="text" class="easyui-textbox" data-options="required:true'"></div>
+                            <div class="col-lg-4"></div>
+                        </div>
+                        <div class="grid">
+                            <div class="col-lg-6" style="text-align:center;"><label><input name="IsRemember" type="checkbox" />记住我</label></div>
+                            <div class="col-lg-6" style="text-align:center;"></div>
+                        </div>
+                        <div class="grid">
+                            <div class="col-lg-6" style="text-align:center;"><button style="width:60%;height:1.8em;" onclick="submitForm()">登录</button></div>
+                            <div class="col-lg-6" style="text-align:center;"><button style="width:60%;height:1.8em;" onclick="clearForm()">重置</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div style="text-align:center;color:#ffffff;">
+                <div style="font-size:1em;">中国程序员实验室</div>
+                <div>output directly to the response stream</div>
+                <div>Copyright&copy;&nbsp;&nbsp;2010-@DateTime.Now.ToString("yyyy")</div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        function submitForm() {
+            $('#ff').form('submit');
+        }
+        function clearForm() {
+            $('#ff').form('clear');
+        }
+    </script>
+}
+
+

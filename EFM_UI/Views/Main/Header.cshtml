@@ -1,0 +1,47 @@
+﻿@model System.Tuple<EFM.ViewModels.AuthenticationUserInfo, IEnumerable<EFM.ViewModels.MenuInfoViewModel>>
+@{
+    ViewBag.Title = "About";
+}
+@section styles {
+    <style type="text/css">
+        .layout-header .mainmenubutton {
+            padding-left: 10px;
+            padding-right: 10px;
+            background: linear-gradient(to bottom,#ffffff 0,#E0ECFF 30%);
+            background-repeat: repeat-x;
+            border-color: #95B8E7;
+            border-radius: 4px 4px 0 0;
+        }
+
+            .layout-header .mainmenubutton.l-btn-selected {
+                /*border-bottom-width: 4px;*/
+                background: linear-gradient(to bottom,#ffffff 0, Highlight 30%);
+                background-repeat: repeat-x;
+            }
+    </style>
+}
+<div class="layout-header" style="height:150px;">
+    <div class="table" style="height:45px;">
+        <div class="col-lg-9"></div>
+        <div class="col-lg-3 horizontal-right vertical-middle" style="padding-right:30px;">
+                    @Model.Item1.UserName [消息|设置|注消]
+        </div>
+    </div>
+    <div class="table" style="position:absolute;bottom:0;">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-10">
+            <div class="block">
+                <div class="block-body">
+                    @{
+                        foreach (var menu in Model.Item2)
+                        {
+                            <a href="#" class="easyui-linkbutton tabs-inner mainmenubutton" data-options="toggle:true,group:'MainMenu'">@menu.MenuName</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+}

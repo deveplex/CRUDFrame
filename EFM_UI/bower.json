@@ -1,0 +1,26 @@
+{
+  "name": "www",
+  "ignore": [
+    "**/.*",
+    "/*.json",
+    "/*.js",
+    "/*.config",
+    "lib",
+    "node_modules",
+    "src",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "2.2.3",
+    "bootstrap": "3.3.6",
+    "jquery-validation": "1.15.0",
+    "jquery-validation-unobtrusive": "*",
+    "jquery.easyui": "1.5.2",
+    "jquery-cookie": "1.4.1",
+    "modernizr": "3.5.0",
+    "respond": "1.4.2"
+  },
+  "resolutions": {
+    "jquery": ">= 1.7.2"
+  }
+}
